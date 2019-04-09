@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DMSkin.Core;
+using DMSkin.Core.Common;
 using System.Windows;
 
 namespace DMSkinDemo
 {
-    /// <summary>
-    /// App.xaml 的交互逻辑
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            Execute.InitializeWithDispatcher();
+
+            //初始化广播器
+            Broadcast.Initialize();
+        }
     }
 }
